@@ -15,10 +15,6 @@ Broadly there are several areas where we haven’t yet reached our [goals](missi
 
  * The cryptographic trust chain is possible based on composefs, overlayfs, fsverity and UKI use to mount both application containers and the operating system bootable container images. However a working complete trust chain from hardware through to the app containers is not yet implemented.
 
- * When rebooting these image based Linux systems, all transient changes made to the optional overlay are lost.
-This would be confusing to a developer or someone trying to adopt these images.
-The behavior is different from the behavior of containers, where you can make changes to a running container, stop and  start that container without losing those local changes.
-
  * Currently when we deploy a bootable container image to a stock Linux system, without bootc already present, it is not possible to roll back. We should fix this.
 
  * Currently the tooling and the base images are limited to using RPM components in the container images. (bootc #468)
